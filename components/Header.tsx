@@ -116,8 +116,51 @@ function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
+          <a href="#" className="text-sm font-semibold leading-6 text-white">
+            Flights
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-white">
+            Car Reantals
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-white">
+            Attractions
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-white">
+            Flights + Hotel
+          </a>
         </Popover.Group>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" className="text-sm font-semibold leading-6 text-white">
+            Log in <span> &rarr;</span>
+          </a>
+        </div>
       </nav>
+
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={MobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
+        <div className="fixed insert-0 z-10" />
+
+        <Dialog.Panel className="fixed insert-y-0 right-0 z-10 w-full overflow-y-auto bg-[#013B94] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className=" font-bold text-xl text-white">Booking.com</span>
+            </a>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6 " aria-hidden="true"/>
+            </button>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
     </header>
   );
 }
